@@ -4,3 +4,4 @@ wwwroot/lib
 bin
 .vs
 obj/Debug
+.vscode
