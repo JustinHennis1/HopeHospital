@@ -1,0 +1,39 @@
+﻿.dropdown-toggle {
+    background-color: #f8f9fa;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* Remove arrow */
+    background-image: none;
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Safari, Chrome, Opera */
+    -webkit-appearance: none;
+    z-index:2;
+}
+.dropdown-toggle,
+.dropdown-toggle2,
+.navbar-toggler {
+    z-index: 2; /* Higher z-index for navigation bar elements */
+}
+
+.dropdown-toggle2 {
+    background-color: #f8f9fa;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* Remove arrow */
+    background-image: none;
+    /* for Firefox */
+    -moz-appearance: none;
+    /* for Safari, Chrome, Opera */
+    -webkit-appearance: none;
+}
+
+.dropdown-toggle::after {
+    display: none;
+    z-index: 2;
+}
+
+
+

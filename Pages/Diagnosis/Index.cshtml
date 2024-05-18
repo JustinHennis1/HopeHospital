@@ -1,0 +1,95 @@
+﻿@page
+@model ProjectHennisJustin.Pages.Diagnosis.IndexModel
+
+@{
+    ViewData["Title"] = "Diagnosis";
+    Layout = "~/Pages/Shared/_diagnosis.cshtml";
+}
+
+<div class="row pt-5">
+    <div class="col">
+        <h2 class="display-4" style="padding-top:250px;">
+            View past diagnosis...
+
+        </h2>
+    </div>
+    <div class="col"><img src="~/images/converse1.png" style="height: 550px; width: auto;"></img></div>
+
+</div>
+<div style="height:30vh;"></div>
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+    <table  id="myTable" class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblDiagnosis[0].DiagnosisDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblDiagnosis[0].DiseaseName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblDiagnosis[0].DiseaseType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblDiagnosis[0].Treatment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblDiagnosis[0].Bill)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblDiagnosis[0].Doctor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TblDiagnosis[0].Patient)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model.TblDiagnosis) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiagnosisDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiseaseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiseaseType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Treatment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bill.BillId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor.DoctorId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Patient.PatientId)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.DiagnosisId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.DiagnosisId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.DiagnosisId">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true
+            });
+        });
+    </script>
+}
+

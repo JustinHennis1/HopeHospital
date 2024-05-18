@@ -1,0 +1,87 @@
+﻿@page
+@model ProjectHennisJustin.Pages.DataVisualization.Procedures.GetMyBillModel
+@{
+    ViewData["Title"] = "My Bills";
+    Layout = "~/Pages/Shared/_billing.cshtml";
+}
+
+<div style="height: 10vh;"></div>
+
+<form class="form-horizontal" method="post" id="spd1">
+    <div class="form-group">
+        <label for="fName" class="col-sm-2 control-label">First Name:</label>
+        <div class="col-sm-10">
+            <input type="text" id="fName" class="form-control" value="" name="fName"></input>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lName" class="col-sm-2 control-label">Last Name:</label>
+        <div class="col-sm-10">
+            <input type="text" id="lName" class="form-control" value="" name="lName"></input>
+        </div>
+    </div>
+    <div style="height: 10vh;"></div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Search Bills</button>
+        </div>
+    </div>
+</form>
+<div style="height: 10vh;"></div>
+
+
+<table id="myTable" class="table-striped table-bordered" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.spGetMyBill[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spGetMyBill[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spGetMyBill[0].Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spGetMyBill[0].Coverage)
+            </th>
+            
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model.spGetMyBill)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.LastName)
+                </td>
+                <td>
+                    $@Html.DisplayFor(model => item.Cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Coverage)
+                </td>
+               
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "paging": false,
+                "ordering": false,
+                "info": true
+            });
+        });
+    </script>
+}

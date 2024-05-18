@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="~/css/index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/ProjectHennisJustin.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-light" style="background: cornflowerblue">
+        <div class="container py-5" style="position: relative;">
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div class="dropdown">
+                    <button class="dropdown-toggle rounded" id="dropdownMenuButton" aria-expanded="false">
+                        <i class="fa-solid fa-bars fa-2xl"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-page="/Index">
+                                <i class="fa-solid fa-house"></i>
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-page="/billhome">
+                                <i class="fa-solid fa-dollar-sign"></i>
+                                Billing
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-page="/Insurance/Index">
+                                <i class="fa-solid fa-id-card"></i>
+                                Insurance
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-page="/Doctor/Index">
+                                <i class="fa-solid fa-user-doctor"></i>
+                                Doctor
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-page="/Patient/Index">
+                                <i class="fa-solid fa-bed"></i>
+                                Patient
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-page="/Diagnosis/Index">
+                                <i class="fa-regular fa-folder-open"></i>
+                                Diagnosis
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                <div class="flex-containerb" style="display: flex;">
+                    <h1 class="display-4">
+                        <i class="fa-solid fa-notes-medical"></i>
+                        @ViewData["Title"]
+                        <i class="fa-solid fa-address-card"></i>
+                    </h1>
+                </div>
+        </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - HopeHospital - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/45144b58eb.js" crossorigin="anonymous"></script>
+    <script src="~/js/index.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

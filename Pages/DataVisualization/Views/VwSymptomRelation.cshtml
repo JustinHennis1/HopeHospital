@@ -1,0 +1,56 @@
+﻿@page
+@model ProjectHennisJustin.Pages.DataVisualization.Views.VwSymptomRelationModel
+@{
+    ViewData["Title"] = "Symptom Diagnosis Relationship";
+    Layout = "~/Pages/Shared/_diagnosis.cshtml";
+}
+
+<div style="height:10vh;"></div>
+
+<table id="myTable" class="table-striped table-bordered" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VwSymptomRelation[0].PatientCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VwSymptomRelation[0].DiseaseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VwSymptomRelation[0].SymptomCode)
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model.VwSymptomRelation)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.PatientCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.DiseaseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.SymptomCode)
+                </td>
+            </tr>
+            
+        }
+
+    </tbody>
+
+</table>
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true
+            });
+        });
+    </script>
+}

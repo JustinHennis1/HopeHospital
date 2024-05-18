@@ -1,0 +1,74 @@
+﻿@page
+@model ProjectHennisJustin.Pages.Insurance.IndexModel
+
+@{
+    ViewData["Title"] = "Insurance Catalogue";
+    Layout = "~/Pages/Shared/_insurance.cshtml";
+}
+<div style="height: 10vh;"></div>
+
+<div class="row">
+    <div class="col">
+        <img src="~/images/splashtrans.png" style="height:250px;"/>
+        <h2 class="display-6">We Take A Variety of Insurances</h2>
+        <img src="~/images/caringDoctor.png" style="height:250px; padding-top:30px;" />
+
+    </div>
+    <div class="col"><img src="~/images/converse1.png" style="height: 550px; width: auto;"></img></div>
+    
+</div>
+<h2 class="display-6" style="padding-top:150px; text-align:center;">
+    Check Below to See If We Take Yours!
+</h2>
+<div style="height: 10vh;"></div>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table id="myTable" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblInsurance[0].CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblInsurance[0].Coverage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblInsurance[0].GroupId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblInsurance) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coverage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GroupId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.InsuranceId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.InsuranceId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.InsuranceId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true
+            });
+        });
+    </script>
+}

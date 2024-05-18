@@ -1,0 +1,69 @@
+﻿@page
+@model ProjectHennisJustin.Pages.Billing.IndexModel
+
+@{
+    ViewData["Title"] = "Patient Billing";
+    Layout = "~/Pages/Shared/_billing.cshtml";
+}
+<div style="height:10vh;"></div>
+<div style="height:10vh;">
+    <a asp-area="" asp-page="/billhome" style="color:cornflowerblue;"><i class="fa-solid fa-circle-chevron-left fa-2xl"></i></a>
+</div>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table id="myTable" class="table-striped table-bordered" style="width: 100%;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblBilling[0].Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblBilling[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblBilling[0].BillDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblBilling[0].Patient)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TblBilling) {
+        <tr>
+            <td>
+                $@Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Patient.PatientId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BillId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BillId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BillId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true
+            });
+        });
+    </script>
+}

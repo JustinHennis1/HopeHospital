@@ -1,0 +1,86 @@
+﻿@page
+@model ProjectHennisJustin.Pages.billhomeModel
+
+@{
+    ViewData["Title"] = "Patient Billing";
+    Layout = "~/Pages/Shared/_billing.cshtml";
+}
+<div style="height:10vh;"></div>
+
+<div class="sidebar left-sidebar">
+    <img src="~/images/bed.png" alt="Left Image">
+</div>
+
+<div class="sidebar right-sidebar">
+    <img src="~/images/hall.jpg" alt="Right Image">
+</div>
+
+<div id="payplan" class="card">
+    <div class="card-image">
+        <img src="~/images/hands.png" alt="Card Image">
+    </div>
+    <div class="card-content">
+        <h2>Sign Up for a Payment Plan
+            <i class="fa-solid fa-circle-check"></i>
+        </h2>
+        <form>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <div class="date-input">
+                    <select id="dobMonth" name="dobMonth" required></select>
+                    <select id="dobDay" name="dobDay" required></select>
+                    <select id="dobYear" name="dobYear" required></select>
+                </div>
+            </div>
+            
+            <button id="submit" type="submit">Submit</button>
+            <button id="clear" type="reset">Clear</button>
+        </form>
+    </div>
+</div>
+
+<!-- Below Is the Green Submitted Screen that pops up-->
+<div id="submissionCard" class="card" style="background-color: green; display:none;">
+    <div class="card-image" style="opacity: 0;">
+        <img src="~/images/hands.png" alt="Card Image">
+    </div>
+    <div  style="width:40px;"></div>
+    <div>
+        <div style="height:157px;"></div>
+        <h4 class="display-6 " style="color: white; text-align: center; padding-left:80px; z-index: 3;">
+            <i class="fa-solid fa-circle-check"></i>
+            Submitted
+            
+        </h4>
+    </div>
+    <div  class="card-content" style="opacity: 0;">
+        <h2>Sign Up for a Payment Plan</h2>
+        <form>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <div class="date-input">
+                    <select id="dobMonth" name="dobMonth" required></select>
+                    <select id="dobDay" name="dobDay" required></select>
+                    <select id="dobYear" name="dobYear" required></select>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>

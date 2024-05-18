@@ -1,0 +1,38 @@
+﻿@page
+@model ProjectHennisJustin.Pages.Insurance.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/_insurance.cshtml";
+}
+
+
+
+<div>
+    <h4>The Info You Requested Has Arrived...</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblInsurance.CompanyName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblInsurance.CompanyName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblInsurance.Coverage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblInsurance.Coverage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblInsurance.GroupId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblInsurance.GroupId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TblInsurance.InsuranceId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,121 @@
+﻿@page
+@model ProjectHennisJustin.Pages.Patient.IndexModel
+
+@{
+    ViewData["Title"] = "Patients";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div style="height:10vh;"></div>
+
+<div class="row" style="height:10vh;">
+    <h1 style="text-align: center;font-size:5vh;">Patient Care is Our Priority</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div id="chart_div" class="chart-container"></div>
+        </div>
+        <div class="row">
+            <div id="chart_div2" class="chart-container"></div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <img src="~/images/hospitalad.gif" class="img-fluid" alt="Hospital Ad" />
+    </div>
+</div>
+
+<div style="height:10vh;"></div>
+
+<div style="height:10vh;">
+    <h1 style="text-align: center;">Patient Identification</h1>
+</div>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table id="myTable" class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].VisitDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].SymptomCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TblPatient[0].Insurance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TblPatient)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VisitDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FormattedPhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SymptomCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Insurance.InsuranceId)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.PatientId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.PatientId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.PatientId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+@section Scripts {
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="~/js/chart.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true
+            });
+            google.charts.load('current', { packages: ['corechart'] });
+            google.charts.setOnLoadCallback(drawCharts);
+
+            function drawCharts() {
+                drawPatientCountByYear();
+                drawBasic();
+            }
+        });
+    </script>
+}

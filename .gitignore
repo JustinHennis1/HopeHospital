@@ -1,0 +1,6 @@
+appsettings.Development.json
+appsettings.json
+wwwroot/lib
+bin
+.vs
+obj/Debug

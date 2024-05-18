@@ -1,0 +1,66 @@
+﻿@page
+@model ProjectHennisJustin.Pages.Diagnosis.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_diagnosis.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Want to Update Your Information?</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TblDiagnosis.DiagnosisId" />
+            <div class="form-group">
+                <label asp-for="TblDiagnosis.DiagnosisDate" class="control-label"></label>
+                <input asp-for="TblDiagnosis.DiagnosisDate" class="form-control" />
+                <span asp-validation-for="TblDiagnosis.DiagnosisDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDiagnosis.DiseaseName" class="control-label"></label>
+                <input asp-for="TblDiagnosis.DiseaseName" class="form-control" />
+                <span asp-validation-for="TblDiagnosis.DiseaseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDiagnosis.DiseaseType" class="control-label"></label>
+                <input asp-for="TblDiagnosis.DiseaseType" class="form-control" />
+                <span asp-validation-for="TblDiagnosis.DiseaseType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDiagnosis.Treatment" class="control-label"></label>
+                <input asp-for="TblDiagnosis.Treatment" class="form-control" />
+                <span asp-validation-for="TblDiagnosis.Treatment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDiagnosis.PatientId" class="control-label"></label>
+                <select asp-for="TblDiagnosis.PatientId" class="form-control" asp-items="ViewBag.PatientId"></select>
+                <span asp-validation-for="TblDiagnosis.PatientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDiagnosis.DoctorId" class="control-label"></label>
+                <select asp-for="TblDiagnosis.DoctorId" class="form-control" asp-items="ViewBag.DoctorId"></select>
+                <span asp-validation-for="TblDiagnosis.DoctorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblDiagnosis.BillId" class="control-label"></label>
+                <select asp-for="TblDiagnosis.BillId" class="form-control" asp-items="ViewBag.BillId"></select>
+                <span asp-validation-for="TblDiagnosis.BillId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

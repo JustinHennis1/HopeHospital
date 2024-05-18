@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Hope Hospital";
+}
+
+<div class="container">
+    <div class="row my-5">
+        <div class="col-md-6">
+            <div class="row text-center">
+                <h1 class="display-4">A Place Where...</h1>
+                <p class="lead"><span id="animatedText">you find healing.</span></p>
+                <p>Patient looking to <a asp-area="" asp-page="/Patient/Index">update your information.</a></p>
+            </div>
+            <div class="row">
+                <img src="~/images/greatStaff.png" class="img-fluid rounded mx-auto d-block" alt="Staff">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="~/images/likeFamily.gif" class="img-fluid rounded mx-auto d-block" alt="Hospital AD">
+        </div>
+    </div>
+
+    <div class="row my-5">
+        <div class="col-md-4">
+            <img src="~/images/scanViewingDoctor.jpg" class="img-fluid rounded mb-3" alt="Scan View">
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/likeFamily2.png" class="img-fluid rounded mb-3" alt="Like Family2">
+        </div>
+        <div class="col-md-4">
+            <img src="~/images/oldman.png" class="img-fluid rounded mb-3" alt="Old man">
+        </div>
+    </div>
+</div>
+
+<script src="~/js/home.js"></script>

@@ -1,0 +1,49 @@
+﻿@page
+@model ProjectHennisJustin.Pages.Billing.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_billing.cshtml";
+}
+
+<h4>Want to Update Your Information?</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TblBilling.BillId" />
+            <div class="form-group">
+                <label asp-for="TblBilling.Cost" class="control-label"></label>
+                <input asp-for="TblBilling.Cost" class="form-control" />
+                <span asp-validation-for="TblBilling.Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblBilling.Status" class="control-label"></label>
+                <input asp-for="TblBilling.Status" class="form-control" />
+                <span asp-validation-for="TblBilling.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblBilling.BillDate" class="control-label"></label>
+                <input asp-for="TblBilling.BillDate" class="form-control" />
+                <span asp-validation-for="TblBilling.BillDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblBilling.PatientId" class="control-label"></label>
+                <select asp-for="TblBilling.PatientId" class="form-control" asp-items="ViewBag.PatientId"></select>
+                <span asp-validation-for="TblBilling.PatientId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
