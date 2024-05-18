@@ -1,6 +1,12 @@
 # Hope Hospital
+## About
+Hope Hospital is a simulation of a real Hospital environment. Using Microsoft SQL Server Studio I recreated some of the different entities you'd see in a real hospital. To be specific, I have tables for Doctors, Patients, Insurance, Billing and Diagnosis with their corresponding foreign key relationships included. The backend is connected to the front end in a seamless fashion. 
 
+If you'd like a quick preview of this project click __BELOW__
 
+<details>
+<summary>Hope Hospital Preview</summary>
+<br/>
 ## Register For Payment Plan 
 https://github.com/JustinHennis1/HopeHospital/assets/89920396/03c6b1b8-7487-45d1-9c01-df0b05f28485
 
@@ -15,7 +21,7 @@ https://github.com/JustinHennis1/HopeHospital/assets/89920396/772a4fb5-3730-477d
 
 
 ## C.R.U.D
-###Patient Diagnosis Lookup
+### Patient Diagnosis Lookup
 https://github.com/JustinHennis1/HopeHospital/assets/89920396/26c1d309-77bf-477a-915f-ee63820a9ff2
 
 
