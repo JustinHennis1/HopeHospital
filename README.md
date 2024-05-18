@@ -1,6 +1,6 @@
 #Hope Hospital
 
-<details Preview>
+<details>
   ##Register For Payment Plan 
 https://github.com/JustinHennis1/HopeHospital/assets/89920396/03c6b1b8-7487-45d1-9c01-df0b05f28485
 
