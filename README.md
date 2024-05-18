@@ -7,10 +7,9 @@ If you'd like a quick preview of this project click __BELOW__
 <details>
 <summary>Hope Hospital Preview</summary>
 <br/>
-## Register For Payment Plan 
+  
+## Register For Payment Plan  
 https://github.com/JustinHennis1/HopeHospital/assets/89920396/03c6b1b8-7487-45d1-9c01-df0b05f28485
-
-
 
 ## View Patient Billing
 https://github.com/JustinHennis1/HopeHospital/assets/89920396/4b35516b-905a-4c93-bef4-601e678397f5
