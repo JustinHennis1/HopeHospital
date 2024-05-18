@@ -4,7 +4,7 @@ Hope Hospital is a simulation of a real Hospital environment. Using Microsoft SQ
 
 If you'd like a quick preview of this project click __BELOW__
 
-<details>
+<details open>
 <summary>Hope Hospital Preview</summary>
 <br/>
   
