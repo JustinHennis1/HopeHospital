@@ -1,5 +1,5 @@
-<h1 style="color:cornflowerblue;">Hope Hospital</h1>
-<h2 style="text-align:center;">About</h2>
+<h1>🏥 Hope Hospital 💙</h1>
+<h2>About</h2>
 Hope Hospital is a simulation of a real Hospital environment. Using Microsoft SQL Server Studio I recreated some of the different entities you'd see in a real hospital. To be specific, I have tables for Doctors, Patients, Insurance, Billing and Diagnosis with their corresponding foreign key relationships included. The backend is connected to the front end in a seamless fashion. 
 
 
